@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MailMind — AI Email Assistant for Gmail</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 780px; margin: 0 auto; padding: 40px 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 32px; margin-bottom: 4px; }
+  h2 { margin-top: 36px; font-size: 20px; border-bottom: 1px solid #e0e0e0; padding-bottom: 6px; }
+  .tagline { color: #666; font-size: 18px; margin-bottom: 32px; }
+  .features { list-style: none; padding: 0; }
+  .features li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+  .features li:last-child { border-bottom: none; }
+  .features strong { display: block; font-size: 16px; margin-bottom: 2px; }
+  .features span { color: #555; font-size: 14px; }
+  a { color: #1a73e8; }
+  .highlight { background: #fff8e1; border-left: 4px solid #ffc107; padding: 12px 16px; margin: 16px 0; font-size: 14px; }
+  .cta { display: inline-block; background: #1a73e8; color: #fff; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-size: 16px; margin-top: 16px; }
+  .cta:hover { background: #1557b0; }
+  .section-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .section-grid div { background: #f8f9fa; border-radius: 8px; padding: 16px; }
+  .section-grid strong { display: block; margin-bottom: 4px; }
+  .section-grid span { font-size: 14px; color: #555; }
+  .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e0e0e0; font-size: 13px; color: #888; }
+  @media (max-width: 600px) { .section-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<h1>MailMind</h1>
+<p class="tagline">AI-powered email assistant for Gmail. Organize, clean up, and manage your inbox using natural language.</p>
+
+<h2>What is MailMind?</h2>
+<p>MailMind is a web application that connects to your Gmail account and lets you manage your email using conversational AI. Instead of manually sorting, labeling, and cleaning up emails, you simply describe what you want in plain language and MailMind handles it.</p>
+
+<div class="highlight">
+  MailMind uses the Gmail API with your explicit consent. You can revoke access at any time from your <a href="https://myaccount.google.com/permissions">Google Account settings</a>.
+</div>
+
+<h2>Features</h2>
+<ul class="features">
+  <li>
+    <strong>Natural Language Commands</strong>
+    <span>Type commands like "archive all newsletters older than 3 months" or "label emails from my bank as Finance" and MailMind executes them.</span>
+  </li>
+  <li>
+    <strong>Subscription Management</strong>
+    <span>See all your newsletter and promotional subscriptions in one place. Unsubscribe from unwanted senders with one click.</span>
+  </li>
+  <li>
+    <strong>Smart Labels &amp; Organization</strong>
+    <span>Create rules to automatically organize incoming emails. MailMind learns your preferences and suggests cleanups.</span>
+  </li>
+  <li>
+    <strong>Auto-Pilot Rules</strong>
+    <span>Set up rules like "always archive marketing emails from this sender" that run automatically in the background.</span>
+  </li>
+  <li>
+    <strong>Draft Replies</strong>
+    <span>Ask MailMind to draft email replies based on the conversation context. Review before sending.</span>
+  </li>
+  <li>
+    <strong>Sender Analytics</strong>
+    <span>Understand who emails you most, how often, and which senders take up the most space in your inbox.</span>
+  </li>
+  <li>
+    <strong>Follow-Up Tracking</strong>
+    <span>Never miss an important reply. MailMind tracks emails that need follow-ups.</span>
+  </li>
+</ul>
+
+<h2>How It Uses Gmail Data</h2>
+<div class="section-grid">
+  <div>
+    <strong>What we access</strong>
+    <span>Email metadata (sender, subject, date, labels), email body content (for AI processing), and label management.</span>
+  </div>
+  <div>
+    <strong>What we don't do</strong>
+    <span>We never store full email bodies permanently, sell your data, or share it with third parties for advertising.</span>
+  </div>
+  <div>
+    <strong>AI processing</strong>
+    <span>Email content is sent to Anthropic's Claude API for processing your commands. Anthropic does not use this data for training.</span>
+  </div>
+  <div>
+    <strong>Your control</strong>
+    <span>Every action is previewed before execution. You confirm changes before MailMind modifies anything in your inbox.</span>
+  </div>
+</div>
+
+<h2>Gmail API Scopes</h2>
+<p>MailMind requests the following Gmail permissions:</p>
+<ul>
+  <li><strong>gmail.modify</strong> — Read, send, and organize emails (label, archive, move). Required for all core features.</li>
+  <li><strong>userinfo.email</strong> — Identify your account for login.</li>
+  <li><strong>userinfo.profile</strong> — Display your name in the app.</li>
+</ul>
+<p>MailMind's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+<h2>Security</h2>
+<ul>
+  <li>OAuth 2.0 authentication (we never see your Google password)</li>
+  <li>JWT tokens with short expiry and device fingerprint binding</li>
+  <li>Two-factor authentication via email verification</li>
+  <li>SSRF protection, rate limiting, and prompt injection defenses</li>
+  <li>All data transmitted over HTTPS</li>
+</ul>
+
+<h2>Legal</h2>
+<p>
+  <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp;
+  <a href="terms.html">Terms of Service</a>
+</p>
+
+<div class="footer">
+  <p>MailMind &copy; 2026. Contact: <a href="mailto:privacy@mailmind.app">privacy@mailmind.app</a></p>
+</div>
+
+</body>
+</html>
